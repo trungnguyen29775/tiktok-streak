@@ -41,6 +41,8 @@ function App() {
         const target = document.querySelector('.img-container');
         target.style.animation = 'rotate 35s linear infinite';
         const audio = document.querySelector('#audio');
+        audio.currentTime = 18;
+        audio.volume = 0.5;
         audio.play();
     };
 
@@ -50,7 +52,7 @@ function App() {
 
     return (
         <div className="App">
-            <audio id="audio" src="bentrai.mp3" autoPlay={false}></audio>
+            <audio id="audio" src="bentrai.mp3" autoPlay={false} loop></audio>
             <div className="main">
                 <div className="content">
                     <div className="fire-text">
