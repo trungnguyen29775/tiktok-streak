@@ -1,38 +1,93 @@
 .App {
-  text-align: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: rgb(9, 9, 27);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+    color: white;
+    z-index: 2;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.img-container {
+    transform-style: preserve-3d;
+    animation: rotate 35s linear infinite;
+    margin-top: 70px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes rotate {
+    from {
+        transform: perspective(2400px) rotateY(0deg);
+    }
+    to {
+        transform: perspective(2400px) rotateY(360deg);
+    }
 }
 
-.App-link {
-  color: #61dafb;
+.img {
+    position: absolute;
+    width: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 42.76deg)) translateZ(500px);
+    height: 250px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+    position: absolute;
+    height: 100%;
+}
+
+.img-title {
+    position: relative;
+    font-size: 12px;
+    text-align: center;
+    bottom: 0;
+    color: white;
+    background-color: black;
+    margin-top: 230px;
+    width: fit-content;
+    padding: 2px;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.fire-text {
+    background: linear-gradient(45deg, #ff4b1f, #ff416c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+#timer {
+    background: linear-gradient(45deg, #ff4b1f, #ff416c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+#d,
+#h,
+#m,
+#s {
+    color: #ff4b1f;
 }
